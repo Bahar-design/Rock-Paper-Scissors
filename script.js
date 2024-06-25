@@ -16,3 +16,7 @@ function getComputerChoice() {
     }
     return computerChoice;
 }
+function getHumanChoice() {
+    let choice = prompt("Let's play a quick fun game! Write down one of the following choices below:\n'Rock', 'Paper', 'Scissors'")
+    return choice.toLowerCase()
+}
