@@ -3,13 +3,13 @@ function getComputerChoice() {
     let computerChoice;
     switch (randomVal) {
         case 0:
-            computerChoice == 'rock'
+            computerChoice = 'rock'
             break;
         case 1:
-            computerChoice == 'paper'
+            computerChoice = 'paper'
             break;
         case 2:
-            computerChoice == 'scissors'
+            computerChoice = 'scissors'
             break;
         default:
             console.log("Must be equal to one out of the three choices");
@@ -56,9 +56,9 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
     for (let i=0; i<5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
     }
 
