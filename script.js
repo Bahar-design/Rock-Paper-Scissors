@@ -12,11 +12,15 @@ function getComputerChoice() {
             computerChoice == 'scissors'
             break;
         default:
-            console.log("Must be equal to one out of the three choices")
+            console.log("Must be equal to one out of the three choices");
     }
     return computerChoice;
 }
+
 function getHumanChoice() {
-    let choice = prompt("Let's play a quick fun game! Write down one of the following choices below:\n'Rock', 'Paper', 'Scissors'")
-    return choice.toLowerCase()
+    let choice = prompt("Let's play a quick fun game! Write down one of the following choices below:\n'Rock', 'Paper', 'Scissors'");
+    return choice.toLowerCase();
 }
+
+let humanScore = 0;
+let computerScore = 0;
