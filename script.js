@@ -53,10 +53,23 @@ function playRound(humanChoice, computerChoice) {
     else {
         alert(`It's a draw!\nComputer: ${computerScore} You: ${humanScore}`)
     }
+}
 
+function playGame() {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
+    for (let i=0; i<5; i++) {
+        playRound(humanSelection, computerSelection);
+    }
 
-    playRound(humanSelection, computerSelection);
-
+    if (humanScore > computerScore) {
+        alert(`You Win! With a score of ${humanScore} against ${computerScore}`);
+    }
+    else if (humanScore < computerScore) {
+        alert(`The computer won with a score of ${computerScore} against your ${humanScore}. Better luck next time.`)
+    }
+    else {
+        alert(`How crazy is it that you ended with a tie of ${humanScore} : ${computerScore}?!`)
+    }
 }
+playGame();
