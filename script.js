@@ -17,15 +17,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function getHumanChoice() {
-    let choice = prompt("Let's play a quick fun game! Write down one of the following choices below:\n'Rock', 'Paper', 'Scissors'");
-    if (choice === null) {
-        alert("Cancelled/Exited Game");
-        return null;
-    }
-    return choice.toLowerCase();
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -59,24 +50,19 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    for (let i=0; i<5; i++) {
-        const humanSelection = getHumanChoice();
-        if (humanSelection === null) {
-            return;
-        }
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
+let rock = document.querySelector("#r");
+let paper = document.querySelector("#p");
+let scissors = document.querySelector("#s")
 
-    if (humanScore > computerScore) {
-        alert(`You Win! With a score of ${humanScore} against ${computerScore}`);
-    }
-    else if (humanScore < computerScore) {
-        alert(`The computer won with a score of ${computerScore} against your ${humanScore}. Better luck next time.`);
-    }
-    else {
-        alert(`How crazy is it that you ended with a tie of ${humanScore} : ${computerScore}?!`);
-    }
-}
-playGame();
+rock.addEventListener("click", () => {
+    computerChoice = getComputerChoice();
+    playRound("rock", computerChoice);
+});
+paper.addEventListener("click", () => {
+    computerChoice = getComputerChoice();
+    playRound("paper", computerChoice);
+});
+scissors.addEventListener("click", () => {
+    computerChoice = getComputerChoice();
+    playRound("scissors", computerChoice);
+});
