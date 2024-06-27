@@ -19,8 +19,11 @@ function getComputerChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+let roundCount = 0;
+const totalPlay = 5;
 
 function playRound(humanChoice, computerChoice) {
+    roundCount++;
     if (humanChoice === 'rock' && computerChoice === 'paper') {
         computerScore++;
         alert(`Oh no, you lost this round... Paper covers Rock\nComputer: ${computerScore} You: ${humanScore}`);
@@ -48,6 +51,29 @@ function playRound(humanChoice, computerChoice) {
     else {
         alert(`It's a draw!\nComputer: ${computerScore} You: ${humanScore}`);
     }
+
+    if (roundCount === totalPlay) {
+        finalResult();
+    }
+}
+
+function finalResult() {
+    if (humanScore > computerScore) {
+        alert(`Yay! You won the game with a score of ${humanScore} against ${computerScore}!`);
+    }
+    else if (humanScore < computerScore) {
+        alert(`Oh no! The computer won with a score of ${computerScore} against your score of ${humanScore}...`);
+    }
+    else {
+        alert(`It ended in a tie of ${humanScore} : ${computerScore} . Better luck next time!`);
+    }
+    resetGame();
+}
+
+function resetGame () {
+    humanScore = 0;
+    computerScore = 0;
+    roundCount = 0;
 }
 
 let rock = document.querySelector("#r");
